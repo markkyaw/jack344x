@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Need ? cuz it's declared as optional
         window?.windowScene = windowScene
         // first view controller to present
-        window?.rootViewController = ViewController()
+        window?.rootViewController = SignInViewController()
         // Make the window visible
         window?.makeKeyAndVisible()
     }

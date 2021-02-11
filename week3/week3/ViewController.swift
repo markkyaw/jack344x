@@ -107,7 +107,7 @@ extension ViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == someTextField2 {
-            print(someTextField2.text ?? <#default value#>)
+            print(someTextField2.text ?? "Some text")
             return true
         }
         centerLabel.text = textField.text

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		A310E0BE25C8FDAB00668ACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A310E0BC25C8FDAB00668ACE /* Main.storyboard */; };
 		A310E0C025C8FDB200668ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A310E0BF25C8FDB200668ACE /* Assets.xcassets */; };
 		A310E0C325C8FDB200668ACE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A310E0C125C8FDB200668ACE /* LaunchScreen.storyboard */; };
+		A3E3FC8325D23A810082826D /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E3FC8225D23A810082826D /* BasicViewController.swift */; };
+		A3E3FC8725D23A990082826D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E3FC8625D23A990082826D /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		A310E0BF25C8FDB200668ACE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A310E0C225C8FDB200668ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A310E0C425C8FDB200668ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3E3FC8225D23A810082826D /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		A3E3FC8625D23A990082826D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 		A310E0B525C8FDAB00668ACE /* week3 */ = {
 			isa = PBXGroup;
 			children = (
+				A3E3FC8525D23A850082826D /* Onboarding */,
 				A310E0B625C8FDAB00668ACE /* AppDelegate.swift */,
 				A310E0B825C8FDAB00668ACE /* SceneDelegate.swift */,
 				A310E0BA25C8FDAB00668ACE /* ViewController.swift */,
@@ -70,8 +75,17 @@
 				A310E0BF25C8FDB200668ACE /* Assets.xcassets */,
 				A310E0C125C8FDB200668ACE /* LaunchScreen.storyboard */,
 				A310E0C425C8FDB200668ACE /* Info.plist */,
+				A3E3FC8225D23A810082826D /* BasicViewController.swift */,
 			);
 			path = week3;
+			sourceTree = "<group>";
+		};
+		A3E3FC8525D23A850082826D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A3E3FC8625D23A990082826D /* SignInViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		C93EBD60C2B5AFE662E67E24 /* Frameworks */ = {
@@ -88,7 +102,6 @@
 				1B07542B552B70ABFFA6CFD4 /* Pods-week3.debug.xcconfig */,
 				2B73DA0FD498F71AEA3D381E /* Pods-week3.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,7 +220,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A310E0BB25C8FDAB00668ACE /* ViewController.swift in Sources */,
+				A3E3FC8325D23A810082826D /* BasicViewController.swift in Sources */,
 				A310E0B725C8FDAB00668ACE /* AppDelegate.swift in Sources */,
+				A3E3FC8725D23A990082826D /* SignInViewController.swift in Sources */,
 				A310E0B925C8FDAB00668ACE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
