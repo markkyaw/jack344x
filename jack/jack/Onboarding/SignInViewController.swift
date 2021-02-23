@@ -131,6 +131,7 @@ extension SignInViewController {
     
     @objc func createAccountAction() {
         print("Create Account")
+        present(SignUpViewController(), animated: true)
     }
     
     @objc func forgotPWAction() {
