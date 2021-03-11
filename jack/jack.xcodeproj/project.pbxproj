@@ -16,6 +16,8 @@
 		A3B203FB25E462BC00752DF7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B203FA25E462BC00752DF7 /* BaseViewController.swift */; };
 		A3B203FE25E462D400752DF7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B203FD25E462D400752DF7 /* SignInViewController.swift */; };
 		A3B2040925E4A78300752DF7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B2040825E4A78300752DF7 /* SignUpViewController.swift */; };
+		A3B2040E25E4B0FA00752DF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3B2040D25E4B0FA00752DF7 /* GoogleService-Info.plist */; };
+		A3B2043725E4C01F00752DF7 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B2043625E4C01F00752DF7 /* SpinnerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		A3B203FA25E462BC00752DF7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A3B203FD25E462D400752DF7 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		A3B2040825E4A78300752DF7 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A3B2040D25E4B0FA00752DF7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A3B2043625E4C01F00752DF7 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		D5DBCD0DFA84AAA544495DA8 /* Pods-jack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jack.release.xcconfig"; path = "Target Support Files/Pods-jack/Pods-jack.release.xcconfig"; sourceTree = "<group>"; };
 		EF97C43AE32359A040FDC552 /* Pods-jack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jack.debug.xcconfig"; path = "Target Support Files/Pods-jack/Pods-jack.debug.xcconfig"; sourceTree = "<group>"; };
 		FF18B04F57F2F7F7437EF62D /* Pods_jack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,13 +72,15 @@
 			isa = PBXGroup;
 			children = (
 				A3B203F725E4628200752DF7 /* Onboarding */,
+				A3B2043525E4C00000752DF7 /* Utilities */,
 				A3B203DC25E461E100752DF7 /* AppDelegate.swift */,
+				A3B203FA25E462BC00752DF7 /* BaseViewController.swift */,
 				A3B203DE25E461E100752DF7 /* SceneDelegate.swift */,
 				A3B203E025E461E100752DF7 /* ViewController.swift */,
 				A3B203E225E461E100752DF7 /* Main.storyboard */,
 				A3B203E525E461E400752DF7 /* Assets.xcassets */,
 				A3B203EA25E461E400752DF7 /* Info.plist */,
-				A3B203FA25E462BC00752DF7 /* BaseViewController.swift */,
+				A3B2040D25E4B0FA00752DF7 /* GoogleService-Info.plist */,
 			);
 			path = jack;
 			sourceTree = "<group>";
@@ -86,6 +92,14 @@
 				A3B203FD25E462D400752DF7 /* SignInViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A3B2043525E4C00000752DF7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A3B2043625E4C01F00752DF7 /* SpinnerViewController.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		D6A46184F20659028088D9C7 /* Frameworks */ = {
@@ -166,6 +180,7 @@
 			files = (
 				A3B203E625E461E400752DF7 /* Assets.xcassets in Resources */,
 				A3B203E425E461E100752DF7 /* Main.storyboard in Resources */,
+				A3B2040E25E4B0FA00752DF7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +238,7 @@
 				A3B203FB25E462BC00752DF7 /* BaseViewController.swift in Sources */,
 				A3B203DD25E461E100752DF7 /* AppDelegate.swift in Sources */,
 				A3B203FE25E462D400752DF7 /* SignInViewController.swift in Sources */,
+				A3B2043725E4C01F00752DF7 /* SpinnerViewController.swift in Sources */,
 				A3B203DF25E461E100752DF7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,7 +385,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = itp344x.jack;
+				PRODUCT_BUNDLE_IDENTIFIER = jack344x.jack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -388,7 +404,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = itp344x.jack;
+				PRODUCT_BUNDLE_IDENTIFIER = jack344x.jack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

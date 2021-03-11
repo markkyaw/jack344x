@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignInViewController: BaseViewController {
     override func viewDidLoad() {
@@ -36,6 +37,7 @@ class SignInViewController: BaseViewController {
         tf.borderStyle = .roundedRect
         tf.placeholder = "Email"
         tf.autocorrectionType = .no
+        tf.autocapitalizationType = .none
         tf.keyboardType = .emailAddress
         return tf
     }()
@@ -127,14 +129,56 @@ extension SignInViewController {
     // need @objc cuz #selector is on objc syntax
     @objc func signInAction() {
         print("Signed In")
+        guard let email = emailTextField.text else { return }
+        guard let pw = pwTextField.text else { return }
+        let spinner = SpinnerViewController()
+        present(spinner, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            // Everything in here will be executed 2 seconds later cuz .now() + 2
+            Auth.auth().signIn(withEmail: email, password: pw) { (result, error) in
+                spinner.dismiss(animated: true, completion: nil)
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                // print(result?.user)
+            }
+        }
+        
     }
     
     @objc func createAccountAction() {
         print("Create Account")
-        present(SignUpViewController(), animated: true)
+        present(SignUpViewController(), animated: true, completion: nil)
     }
     
     @objc func forgotPWAction() {
-        print("Forgot Password")
+        let alert = UIAlertController(title: "Forgot Password", message: "Receive a passowrd recovery email", preferredStyle: .alert)
+        
+        alert.addTextField{ (tf) in
+            tf.placeholder = "Email Address"
+            tf.autocorrectionType = .no
+            tf.keyboardType = .emailAddress
+        }
+        
+        // style has default, destructive, cancel
+        let submitAction = UIAlertAction(title: "Recover Password", style: .default) { (_) in
+            // code to execute when user clicks on the button
+            // alert.textFields is optional just for safe unwrap
+            if let tfs = alert.textFields {
+                guard let email = tfs.first?.text else { return }
+                Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    }
+                    print("Password resent email sent")
+                }
+                // Use Firebase to send forgot password email
+                // Display loading indicator
+                // Dismiss the loading indicator after Firebase confirms the email has been sent
+            }
+        }
+        alert.addAction(submitAction)
+        present(alert, animated: true, completion: nil)
     }
 }
