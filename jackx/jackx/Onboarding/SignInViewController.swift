@@ -134,12 +134,12 @@ extension SignInViewController {
         guard let email = emailTextField.text else { return }
         guard let pw = pwTextField.text else { return }
         let spinner = SpinnerViewController()
+
 //        present(spinner, animated: true, completion: nil)
 //        Artifical delay for testing, deadlines means how long to wait
-//        DispatchQueue.main.asyncAfter(deadline: .now()) {
-//
-//        }
-        // Everything in here will be executed 2 seconds later cuz .now() + 2
+//        DispatchQueue.main.asyncAfter(deadline: .now()) { }
+
+// Everything in here will be executed 2 seconds later cuz .now() + 2
         Auth.auth().signIn(withEmail: email, password: pw) { (result, error) in
 //            Dismiss the spinner when we get results back over the network
 //            spinner.dismiss(animated: true, completion: nil)
@@ -148,7 +148,20 @@ extension SignInViewController {
                 return
             }
             // print(result?.user)
-        }
+            
+//            Add signed in user to db
+//            In helper, the (error) sends to completion(error) which is received here
+            FirestoreHelper.shared.onUserSignIn { (error) in
+                print(error?.localizedDescription ?? "")
+                FirestoreHelper.shared.getUserDetails { (data, error) in
+                    if let error = error {
+                        print(error)
+                    } else {
+                        print(data)
+                    }
+                }
+            }
+            
 //        Using UIWindowsTransitoin for smoother transitoin
         let options = UIWindow.TransitionOptions()
         options.background = .solidColor(.systemBackground)
@@ -159,12 +172,14 @@ extension SignInViewController {
         
 //        View controller with tabs on bottom for navigation
         UIApplication.shared.windows.first?.set(rootViewController: CustomTabBarController(), options: options, nil)
+        }
         
 //        UIApplication.shared.windows.first?.rootViewController = PrioritiesViewController()
 //        Another way to change view controller but doesn't fully change root
 //        let priorities = PrioritiesViewController()
 //        priorities.modalPresentationStyle = .fullScreen
 //        present(priorities, animated: true, completion: nil)
+//        Transition to PrioritiesViewController with sliding animation
         navigationController?.pushViewController(PrioritiesViewController(), animated: true)
         
         

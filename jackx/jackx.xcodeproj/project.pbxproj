@@ -21,6 +21,8 @@
 		A3F053A825FAD41A004D641F /* PrioritiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F053A725FAD41A004D641F /* PrioritiesViewController.swift */; };
 		A3F053C425FAEDA7004D641F /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F053C325FAEDA7004D641F /* CustomTabBarController.swift */; };
 		A3F053C825FAEFDA004D641F /* P2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F053C725FAEFDA004D641F /* P2ViewController.swift */; };
+		A3F053FB25FB05CE004D641F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F053FA25FB05CE004D641F /* ListViewController.swift */; };
+		A3F053FE25FB14D1004D641F /* FirestoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F053FD25FB14D1004D641F /* FirestoreHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		A3F053A725FAD41A004D641F /* PrioritiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrioritiesViewController.swift; sourceTree = "<group>"; };
 		A3F053C325FAEDA7004D641F /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		A3F053C725FAEFDA004D641F /* P2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2ViewController.swift; sourceTree = "<group>"; };
+		A3F053FA25FB05CE004D641F /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		A3F053FD25FB14D1004D641F /* FirestoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreHelper.swift; sourceTree = "<group>"; };
 		AD730219E62EC09CD4D8008A /* Pods_jackx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jackx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +98,7 @@
 		A3F0534F25FAC8FB004D641F /* jackx */ = {
 			isa = PBXGroup;
 			children = (
+				A3F053F925FB05AC004D641F /* List */,
 				A3F0538025FACABE004D641F /* Onboarding */,
 				A3F0538125FACAC4004D641F /* Utilities */,
 				A3F0535025FAC8FB004D641F /* AppDelegate.swift */,
@@ -124,8 +129,17 @@
 			isa = PBXGroup;
 			children = (
 				A3F0538925FACB0D004D641F /* SpinnerViewController.swift */,
+				A3F053FD25FB14D1004D641F /* FirestoreHelper.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A3F053F925FB05AC004D641F /* List */ = {
+			isa = PBXGroup;
+			children = (
+				A3F053FA25FB05CE004D641F /* ListViewController.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,7 +261,9 @@
 				A3F053C825FAEFDA004D641F /* P2ViewController.swift in Sources */,
 				A3F053A825FAD41A004D641F /* PrioritiesViewController.swift in Sources */,
 				A3F0538725FACAEF004D641F /* SignInViewController.swift in Sources */,
+				A3F053FB25FB05CE004D641F /* ListViewController.swift in Sources */,
 				A3F0535125FAC8FB004D641F /* AppDelegate.swift in Sources */,
+				A3F053FE25FB14D1004D641F /* FirestoreHelper.swift in Sources */,
 				A3F0535325FAC8FB004D641F /* SceneDelegate.swift in Sources */,
 				A3F0538A25FACB0D004D641F /* SpinnerViewController.swift in Sources */,
 				A3F0538425FACAE1004D641F /* SignUpViewController.swift in Sources */,
