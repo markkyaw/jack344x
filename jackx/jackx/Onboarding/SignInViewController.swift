@@ -7,11 +7,13 @@
 
 import UIKit
 import FirebaseAuth
+import UIWindowTransitions
 
 class SignInViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
+        title = "Sign In"
     }
     
     let stackView: UIStackView = {
@@ -132,20 +134,39 @@ extension SignInViewController {
         guard let email = emailTextField.text else { return }
         guard let pw = pwTextField.text else { return }
         let spinner = SpinnerViewController()
-        present(spinner, animated: true, completion: nil)
-        // Artifical delay for testing, deadlines means how long to wait
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            // Everything in here will be executed 2 seconds later cuz .now() + 2
-            Auth.auth().signIn(withEmail: email, password: pw) { (result, error) in
-                // Dismiss the spinner when we get results back over the network
-                spinner.dismiss(animated: true, completion: nil)
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
-                }
-                // print(result?.user)
+//        present(spinner, animated: true, completion: nil)
+//        Artifical delay for testing, deadlines means how long to wait
+//        DispatchQueue.main.asyncAfter(deadline: .now()) {
+//
+//        }
+        // Everything in here will be executed 2 seconds later cuz .now() + 2
+        Auth.auth().signIn(withEmail: email, password: pw) { (result, error) in
+//            Dismiss the spinner when we get results back over the network
+//            spinner.dismiss(animated: true, completion: nil)
+            if let error = error {
+                print(error.localizedDescription)
+                return
             }
+            // print(result?.user)
         }
+//        Using UIWindowsTransitoin for smoother transitoin
+        let options = UIWindow.TransitionOptions()
+        options.background = .solidColor(.systemBackground)
+        options.style = .easeInOut
+        options.duration = 0.5
+//        Don't want user to be able to come back to this view controller
+//        UIApplication.shared.windows.first?.set(rootViewController: UINavigationController(rootViewController: CustomTabBarController()), options: options, nil)
+        
+//        View controller with tabs on bottom for navigation
+        UIApplication.shared.windows.first?.set(rootViewController: CustomTabBarController(), options: options, nil)
+        
+//        UIApplication.shared.windows.first?.rootViewController = PrioritiesViewController()
+//        Another way to change view controller but doesn't fully change root
+//        let priorities = PrioritiesViewController()
+//        priorities.modalPresentationStyle = .fullScreen
+//        present(priorities, animated: true, completion: nil)
+        navigationController?.pushViewController(PrioritiesViewController(), animated: true)
+        
         
     }
     

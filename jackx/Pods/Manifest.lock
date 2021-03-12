@@ -334,6 +334,7 @@ PODS:
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
   - SnapKit (5.0.1)
+  - UIWindowTransitions (1.0.0)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -341,6 +342,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - IQKeyboardManagerSwift
   - SnapKit (~> 5.0.0)
+  - UIWindowTransitions
 
 SPEC REPOS:
   trunk:
@@ -364,6 +366,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SnapKit
+    - UIWindowTransitions
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -386,7 +389,8 @@ SPEC CHECKSUMS:
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  UIWindowTransitions: 2237083382e11f100db7de934041bba0c4669c86
 
-PODFILE CHECKSUM: 8427f5b9e7a02f8d58c5f2078a56c2ce55c0c3a8
+PODFILE CHECKSUM: a1526274f2710b1aac052f0f54ff05c8b797b416
 
 COCOAPODS: 1.10.1
