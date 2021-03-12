@@ -8,7 +8,8 @@ target 'jackx' do
   pod 'IQKeyboardManagerSwift'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
-  pod 'Firebase/Firestore' 
+  pod 'Firebase/Firestore'
+  pod 'UIWindowTransitions'
 
   # Pods for jackx
 

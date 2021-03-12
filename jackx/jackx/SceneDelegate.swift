@@ -23,6 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Need ? cuz it's declared as optional
         window?.windowScene = windowScene
         // first view controller to present
+        // show the title on the top to tell where user is
+//        window?.rootViewController = UINavigationController(rootViewController: SignInViewController())
         window?.rootViewController = SignInViewController()
         // Make the window visible
         window?.makeKeyAndVisible()
